@@ -1,0 +1,104 @@
+$fonthead: 'Poppins', sans-serif;
+$fontstack: 'Jost', sans-serif;
+$colortextdark: #33303E;
+$colortext: #716e79;
+$colororange: #FF6525;
+$colororangesoft: #FFD9C9;
+
+@mixin transition($second) {
+  -webkit-transition: all $second ease-in-out;
+    -moz-transition: all $second ease-in-out;
+        transition: all $second ease-in-out;
+}
+
+// Container mixins
+
+@mixin make-container($gutter: $container-padding-x) {
+    width: 100%;
+    padding-right: var(--#{$variable-prefix}gutter-x, #{$gutter});
+    padding-left: var(--#{$variable-prefix}gutter-x, #{$gutter});
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+
+// BORDER RADIUS
+@mixin border-radius($radius){
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+
+
+//   transition 
+@mixin transition($transition){
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  transition: $transition;
+}
+
+
+//  transform property
+@mixin transform($property){
+  -webkit-transform: $property;
+  -ms-transform:     $property;
+  transform:         $property;
+}
+
+// @font-face {
+//     font-family: 'MinionPro-Regular';
+//     src: url(../fonts/MinionPro-Regular);
+// }
+
+// @font-face {
+//     font-family: 'MinionPro-Medium';
+//     src: url(../fonts/MinionPro-Medium.ttf);
+// }
+
+
+
+
+
+
+@mixin breakpoint($point) {
+    @if $point == max-xs {
+        @media (max-width: 320px) { @content ; }
+    }
+    @else if $point == max-mobile {
+        @media (max-width: 375px) { @content ; }
+    }
+    @else if $point == mobile {
+        @media (max-width: 425px) { @content ; }
+    }
+    @else if $point == sm {
+        @media (min-width: 576px) { @content ; }
+    }
+    @else if $point == max-sm {
+        @media (max-width: 575px) { @content ; }
+    }
+    @else if $point == md {
+        @media (min-width: 768px) { @content ; }
+    }
+    @else if $point == max-md {
+        @media (max-width: 767px) { @content ; }
+    }
+    @else if $point == lg {
+        @media (min-width: 992px) { @content ; }
+    }
+    @else if $point == max-lg {
+        @media (max-width: 991px) { @content ; }
+    }
+    @else if $point == xl {
+        @media (min-width: 1200px) { @content ; }
+    }
+    @else if $point == max-xl {
+        @media (max-width: 1199px) { @content ; }
+    }
+    @else if $point == xxl {
+        @media (min-width: 1400px) { @content ; }
+    }
+    @else if $point == max-xxl {
+        @media (max-width: 1399px) { @content ; }
+    }
+}
