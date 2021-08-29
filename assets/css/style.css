@@ -2654,6 +2654,10 @@ body {
   width: 30px;
 }
 
+.gallery-b li .team-text ul li::after {
+  content: none;
+}
+
 .gallery-b li a {
 
   text-decoration: none;
